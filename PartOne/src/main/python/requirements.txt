@@ -1,0 +1,2 @@
+Faker==9.5.2
+python-csv==0.0.13
