@@ -11,7 +11,7 @@ class DataGenerator:
 
     def generateOrders(self, numOrders, product_ids, numCustomers):
         customerIds = self.generateIds(numCustomers)
-        orders = [{'order_id': self.fake.uuid4(), 'customer_id' : np.random.choice(customerIds), 'product_id' : np.random.choice(product_ids), 'order_date' :self.fake.date_this_year(after_today=True).isoformat()} for x in range(numOrders)]
+        orders = [{'customer_id' : np.random.choice(customerIds), 'product_id' : np.random.choice(product_ids), 'order_date' :self.fake.date_this_year(after_today=True).isoformat()} for x in range(numOrders)]
         return orders
 
     def generateProducts(self, productIds):

@@ -18,7 +18,7 @@ class TestCase:
         # print(os.getcwd())
         with open(f'{self.dirname}/orders.csv') as f:
             reader = csv.DictReader(f)
-            assert reader.fieldnames == ['order_id', 'customer_id', 'product_id', 'order_date']
+            assert reader.fieldnames == ['customer_id', 'product_id', 'order_date']
             rows = [row for row in reader]
             assert len(rows) == num_orders
         with open(f'{self.dirname}/products.csv') as f:
@@ -39,9 +39,6 @@ class TestCase:
         fake_orders = self.dataGenerator.generateOrders(numOrders=10, product_ids=expected_product_ids, numCustomers=20)
         print(fake_orders)
         assert len(fake_orders) == 10
-
-        uuid = fake_orders[0]['order_id']
-        assert self.is_valid_uuid(uuid)
 
         product_id = fake_orders[0]['product_id']
         assert product_id in expected_product_ids
