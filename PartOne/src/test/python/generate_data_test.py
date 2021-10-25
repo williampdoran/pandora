@@ -6,8 +6,9 @@ from datetime import date
 
 from data_generator.data_generator import DataGenerator
 
+
 class TestGenerateData:
-    dirname = "src/test/resources"
+    dirname = "src/test/resources/generated"
     dataGenerator = DataGenerator(dirname)
 
     def test_generates_file(self):
@@ -27,7 +28,7 @@ class TestGenerateData:
             assert len(rows) == num_orders
 
     def test_product_ids(self):
-        fake_products = self.dataGenerator.generate_products(self.dataGenerator.generate_ids(10))
+        fake_products = self.dataGenerator.generate_products_data(self.dataGenerator.generate_ids(10))
         assert len(fake_products) == 10
         uuid = fake_products[0]['product_id']
         assert self.is_valid_uuid(uuid)
@@ -35,7 +36,7 @@ class TestGenerateData:
 
     def test_orders(self):
         expected_product_ids = ['a', 'b', 'c', 'd']
-        fake_orders = self.dataGenerator.generate_orders(num_orders=10, product_ids=expected_product_ids, num_customers=20)
+        fake_orders = self.dataGenerator.generate_orders_data(num_orders=10, product_ids=expected_product_ids, num_customers=20)
         print(fake_orders)
         assert len(fake_orders) == 10
 
