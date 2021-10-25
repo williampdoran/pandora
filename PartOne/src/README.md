@@ -18,7 +18,7 @@ cd <PATH>/pandora/PartOne
 PYTHONPATH=src/main/python python -m pytest src/test/python/
 ```
 
-##Assumptions:
+## Assumptions:
 - I made the assumption that individual product orders made on the same day by the same customer should be aggregated into the same order
 - I also dropped any products that had a null category
 - I assumed a normal distribution for any random choices of products, categories and customers
