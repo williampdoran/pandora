@@ -1,6 +1,6 @@
 # PartOne: Order aggregation
 
-Create your favorite python virtualEnv and activate it, install required:
+Create your favorite python virtualEnv and activate it, install requirements (I used python 3.9.2, pyenv and pip):
 ```bash
 cd <PATH>/pandora/PartOne
 pip install -r src/main/python/requirements.txt
